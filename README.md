@@ -81,25 +81,26 @@ A professional-grade cryptocurrency trading analytics platform providing real-ti
 
 ## Screenshots
 
+### Landing Page
+![Hero](screenshots/hero.png)
+
 ### Trading Dashboard
 ![Trading Dashboard](screenshots/dashboard.png)
-*Real-time portfolio overview with P&L charts and active positions*
 
 ### Market Scanner
 ![Market Scanner](screenshots/scanner.png)
-*Cross-asset screening with OFC indicators*
 
-### AI Strategy Selector
-![AI Strategy](screenshots/ai-strategy.png)
-*Machine learning-powered strategy recommendations*
-
-### Charts & Indicators
+### OFC Indicators & Charts
 ![Charts](screenshots/charts.png)
-*Interactive charts with proprietary order flow indicators*
 
 ### Copy Trading
 ![Copy Trading](screenshots/copy-trading.png)
-*Automated position mirroring interface*
+
+### Monitoring Dashboard
+![Monitoring](screenshots/monitoring.png)
+
+### Recent Trades
+![Recent Trades](screenshots/recent-trades.png)
 
 ---
 
