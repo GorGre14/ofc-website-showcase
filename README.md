@@ -17,15 +17,18 @@ A professional-grade cryptocurrency trading analytics platform providing real-ti
 - **Lightweight Charts** - TradingView-style charts
 
 ### Backend
-- **Next.js API Routes** - Serverless functions
+- **Next.js API Routes** - Server-side API endpoints
 - **PostgreSQL** - Primary database
 - **Prisma ORM** - Database management
 - **Redis** - Real-time caching & pub/sub
 - **BullMQ** - Background job processing
 
 ### Infrastructure
-- **AWS S3** - Chart image storage
-- **Vercel** - Deployment & hosting
+- **VPS (Dedicated Servers)** - Self-hosted deployment
+- **PM2** - Process management & clustering
+- **Nginx** - Reverse proxy & load balancing
+- **Cloudflare** - CDN & DDoS protection
+- **MinIO** - S3-compatible object storage for chart images
 - **NextAuth.js** - Authentication
 - **Stripe** - Subscription management
 
@@ -104,18 +107,24 @@ A professional-grade cryptocurrency trading analytics platform providing real-ti
 
 ```
                     +------------------+
-                    |    Vercel CDN    |
+                    |   Cloudflare     |
+                    |   (CDN & DNS)    |
+                    +--------+---------+
+                             |
+                    +--------v---------+
+                    |  Nginx Reverse   |
+                    |      Proxy       |
                     +--------+---------+
                              |
                     +--------v---------+
                     |   Next.js App    |
-                    |  (SSR + API)     |
+                    |   (PM2 Managed)  |
                     +--------+---------+
                              |
           +------------------+------------------+
           |                  |                  |
 +---------v------+  +--------v-------+  +------v--------+
-|   PostgreSQL   |  |     Redis      |  |    AWS S3     |
+|   PostgreSQL   |  |     Redis      |  |     MinIO     |
 |  (Trade Data)  |  |  (Cache/PubSub)|  | (Chart Images)|
 +----------------+  +----------------+  +---------------+
           |                  |
@@ -137,12 +146,13 @@ A professional-grade cryptocurrency trading analytics platform providing real-ti
 
 ### Key Components
 
-- **Web Application** - Next.js-based frontend with server-side rendering for optimal performance
+- **Web Application** - Next.js frontend with SSR, managed by PM2 for high availability
 - **API Layer** - RESTful endpoints handling authentication, data queries, and real-time updates
 - **Data Pipeline** - Python workers processing market data, computing indicators, and generating alerts
 - **Caching Layer** - Redis for real-time data caching, session management, and pub/sub messaging
 - **Job Queue** - BullMQ handling background tasks like report generation and alert processing
-- **Storage** - PostgreSQL for persistent data, S3 for chart images and static assets
+- **Object Storage** - MinIO (S3-compatible) for chart images and screenshot storage
+- **Database** - PostgreSQL for persistent trade data, user accounts, and market history
 
 ---
 
