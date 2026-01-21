@@ -90,9 +90,6 @@ A professional-grade cryptocurrency trading analytics platform providing real-ti
 ### Market Scanner
 ![Market Scanner](screenshots/scanner.png)
 
-### OFC Indicators & Charts
-![Charts](screenshots/charts.png)
-
 ### Copy Trading
 ![Copy Trading](screenshots/copy-trading.png)
 
